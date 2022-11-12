@@ -1,0 +1,24 @@
+.container-login100 {
+    background-color: white !important;
+}
+
+.login100-form-btn:active{
+    transform: translateY(4px) !important ;
+}
+
+.wrap-login100 {
+    width: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;; 
+}
+
+
+@media (max-width: 576px) {
+    .login100-form-btn {
+        min-width: 100px;
+    }
+}
+@media (min-width: 425px) {
+    .login100-form-btn {
+        min-width: 100px;
+    }
+}
