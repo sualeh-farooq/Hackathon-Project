@@ -69,13 +69,75 @@
 }
 
 
-/* @media (max-width: 576px) {
-    .login100-form-btn {
+@media (max-width: 576px) {
+    /* .login100-form-btn {
         min-width: 100px;
+    } */
+    .heading {
+        margin: 0 auto !important;
+        /* border: 2px solid black; */
+        width: max-content;
+        text-align: end;
+        /* margin-bottom: -15px !important; */
+        /* margin-top: -30px !important; */
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        justify-content: space-evenly;
+    }
+    .smitLogo {
+        width: 150px;
+        /* border: 2px solid black; */
+        margin: 0 auto;
+        /* margin-bottom: -50px !important; */
+    
+    }
+    
+    .h2{
+        font-family: poppins-Medium;
+        /* color: yellow; */
+        margin-top: 5px !important ;
+        font-size: 30px !important;   
+    }
+    .wrap-login100 {
+        width: 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;; 
+        margin-top: -10px;
     }
 }
-@media (min-width: 425px) {
-    .login100-form-btn {
+@media (max-width: 768px) {
+    /* .login100-form-btn {
         min-width: 100px;
+    } */
+    .heading {
+        margin: 0 auto !important;
+        /* border: 2px solid black; */
+        width: max-content;
+        text-align: end;
+        /* margin-bottom: -15px !important; */
+        /* margin-top: -30px !important; */
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        justify-content: space-evenly;
     }
-} */
+    .smitLogo {
+        width: 150px;
+        /* border: 2px solid black; */
+        margin: 0 auto;
+        /* margin-bottom: -50px !important; */
+    
+    }
+    
+    .h2{
+        font-family: poppins-Medium;
+        /* color: yellow; */
+        margin-top: 5px !important ;
+        font-size: 30px !important;   
+    }
+    .wrap-login100 {
+        width: 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;; 
+        margin-top: -10px;
+    }
+}
