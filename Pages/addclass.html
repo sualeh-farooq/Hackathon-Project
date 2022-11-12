@@ -28,10 +28,9 @@
             <img src="/assets/smit.png" class="sidebar-logo" />
           </header>
           <nav class="sidebar-menu">
-            <button type="button">
-              
+            <button type="button" id ="gotoHome">
               <img  class="fa fa-home" src="/assets/icon-home.svg" />
-              <span  >Home</span>
+              <span >Home</span>
             </button>
             <button type="button">
               <img class=" fa fa-graduation-cap" src="/assets/icon-blockchain.svg" />
@@ -65,67 +64,70 @@
         </div>
       </nav>
 
-      <div class="container">
-        <div class="limiter adminLim">
-            <div>
-                <img class="adminLogo" src="/assets/smit.png" alt="">
-            </div>
-            <div>
-                <h2 class="adminHead"  >Saylani Mass IT Training - Attendance Portal</h2>
-            </div>
-        </div>
-        <!-- <hr> -->
-
-        <div class="cardGrid">
-          <button  class="cardBtn" id="addClass" >  
-            <div class="card" style="width: 18rem;">
-              <img class="fa fa-user" src="/assets/icon-speaker.svg" />
-                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-              <img class=" fa fa-graduation-cap okay" src="/assets/icon-blockchain.svg" />
-
-                <div class="card-body">
-                  <h5 class="card-title">Add Class</h5>
-                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                  <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
-                </div>
+    <!-- Class Register-->
+    <div class="container " id="head">
+      <br>
+    
+      <!-- <hr> -->
+      <form id="form">
+          <div class="row-check">
+              <div class="col">
+                  <label>Class Timings</label>
+                  <br>
+                  <input class="input" id="name" placeholder="Class Timings" type="text">
               </div>
-            </button>
-            <button class="cardBtn">  
-                <div class="card" style="width: 18rem;">
-                    
-                    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                    <img class="fa fa-user okay" src="/assets/icon-speaker.svg" />
-                    <div class="card-body">
-                        
-                      <h5 class="card-title">Add Student</h5>
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                      <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
-                    </div>
-                  </div>
-                </button>
-                <button class="cardBtn">  
-                    <div class="card" style="width: 18rem;">
-                <img class="far fa-id-card okay" src="/assets/icon-levels.svg" />
+              <div class="col">
+                  <label>Schedule</label>
+                  <br>
+                  <input class="input" id="father" placeholder="Schedule of Class" type="text">
+              </div>
+          </div>
+          <div class="row-check">
+              <div class="col">
+                  <label>Teacher Name</label>
+                  <br>
+                  <input placeholder="Teacher" id="email" class="input" type="text">
+              </div>
+              <div class="col">
+                  <label>Section </label>
+                  <br>
+                  <input placeholder="Section" id="number" class="input" type="text">
+              </div>
+          </div>
+          <div class="row-check">
+              
+              <div class="col">
+                  <label>Course</label>
+                  <br>
+               <input type="text" class="input" placeholder="Enter Course">
+          </div>
+        
+          
+          
+          <div class="row-check">
+              <div class="col">
+                  <label>Batch Number</label>
+                  <br>
+                  <input class="input file" name="path" id="picture" type="text" placeholder="Batch Number" >
 
-                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                        <div class="card-body">
-                          <h5 class=    "card-title">Attendance</h5>
-                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                          <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
-                        </div>
-                      </div>
-                    </button>
-        </div>
-      </div>
-  
+              </div>
+          </div>
+          <div class="row-check">
+            <div class="col">
+          <submit onclick="getData()" type="submit" id="submitClass" class="btn btn-primary">Add Class</submit>
+            </div></div>
+      </form>
+   
+          
       <script type="text/javascript">
         const toggleSidebar = () => document.body.classList.toggle("open");
       </script>
   
-    
-  <!-- <script src="admin.js" type="module"></script>
-  sc -->
-  <script src="/JS/admin.js" type="module"></script>
+  
+  
+  <!-- <script src="addClass.js" type="module"></script>
+  a -->
+  <script src="/JS/addClass.js" type="module"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js "
