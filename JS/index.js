@@ -81,7 +81,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
        console.log(`User Login ==> ` , user )
-    //    window.location.href = "/pages/admin.html"
+       window.location.href = "/pages/admin.html"
     } else {
       console.log('User is Signout')
     }

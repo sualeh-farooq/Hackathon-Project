@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/Styles/admin.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.statically.io/gh/sualeh-farooq/Components-Styles/main/Nav-bar/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -29,8 +29,8 @@
           </header>
           <nav class="sidebar-menu">
             <button type="button">
-              <img src="/assets/icon-home.svg" />
-              <span>Home</span>
+              <img  class="fa fa-home" src="/assets/icon-home.svg" />
+              <span  >Home</span>
             </button>
             <button type="button">
               <img class=" fa fa-graduation-cap" src="/assets/icon-blockchain.svg" />
@@ -53,7 +53,11 @@
               <span>Students</span>
             </button>
             <button type="button">
-              <img src="/assets/icon-accounts.svg" />
+                <img class="far fa-id-card" src="/assets/icon-levels.svg" />
+                <span>Attendance</span>
+              </button>
+            <button type="button">
+              <img class="fa fa-arrow-right" src="/assets/icon-accounts.svg" />
               <span>Logout</span>
             </button>
           </nav>
@@ -61,6 +65,56 @@
       </nav>
 
       <div class="container">
+        <div class="limiter adminLim">
+            <div>
+                <img class="adminLogo" src="/assets/smit.png" alt="">
+            </div>
+            <div>
+                <h2 class="adminHead"  >Saylani Mass IT Training - Attendance Portal</h2>
+            </div>
+        </div>
+        <hr>
+
+        <div class="cardGrid">
+          <button  class="cardBtn" >  
+            <div class="card" style="width: 18rem;">
+              <img class="fa fa-user" src="/assets/icon-speaker.svg" />
+                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+              <img class=" fa fa-graduation-cap okay" src="/assets/icon-blockchain.svg" />
+
+                <div class="card-body">
+                  <h5 class="card-title">Add Class</h5>
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
+                </div>
+              </div>
+            </button>
+            <button class="cardBtn">  
+                <div class="card" style="width: 18rem;">
+                    
+                    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                    <img class="fa fa-user okay" src="/assets/icon-speaker.svg" />
+                    <div class="card-body">
+                        
+                      <h5 class="card-title">Add Student</h5>
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                      <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
+                    </div>
+                  </div>
+                </button>
+                <button class="cardBtn">  
+                    <div class="card" style="width: 18rem;">
+                <img class="far fa-id-card okay" src="/assets/icon-levels.svg" />
+
+                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                        <div class="card-body">
+                          <h5 class="card-title">Attendance</h5>
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                          <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
+                        </div>
+                      </div>
+                    </button>
+        </div>
       </div>
   
       <script type="text/javascript">
