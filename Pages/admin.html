@@ -9,52 +9,65 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="/Styles/admin.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.statically.io/gh/sualeh-farooq/Components-Styles/main/Nav-bar/style.css">
 </head>
 <body>
-    <div class="main" id="main">
-        <div class="container">
-            <div class="name">
-                <div class="logo">
-                    <img src="/assets/smit.png">
-                </div>
-                <div class="date">
-                    <p id="dateSpace"></p>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar" id="nav">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+    <nav class="sidebar">
+        <div class="sidebar-inner">
+          <header class="sidebar-header">
+            <button
+              type="button"
+              class="sidebar-burger"
+              onclick="toggleSidebar()"
+            ></button>
+            <img src="/assets/smit.png" class="sidebar-logo" />
+          </header>
+          <nav class="sidebar-menu">
+            <button type="button">
+              <img src="/assets/icon-home.svg" />
+              <span>Home</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <img class="navbar-brand" src="/assets/logo-white.png" onclick="win()">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" onclick="business()">Business <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" >Entertainment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" >Health</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" >Science</a>
-                    </li>
-                    <li class="nav-item" style="border: none;">
-                        <a class="nav-link" >Technology</a>
-                    </li>
-                </ul>
-                <div class="form-inline my-2 my-lg-0 form">
-                    <input class="form-control mr-sm-2 search" id="search" type="search" placeholder="Search"
-                        aria-label="Search">
-                    <button  class="btn btn-primary my-2 my-sm-0">Search</button>
-                </div>
-            </div>
-        </nav>
-    </div>
+            <button type="button">
+              <img class=" fa fa-graduation-cap" src="/assets/icon-blockchain.svg" />
+              <span>Add Class</span>
+            </button>
+            <button type="button">
+              <img class="fa fa-user" src="/assets/icon-speaker.svg" />
+              <span>Add Student</span>
+            </button>
+            <button type="button" class="has-border ">
+              <img class="fa fa-search" src="/assets/search.svg" />
+              <span>Search</span>
+            </button>
+            <button type="button">
+              <img src="/assets/icon-folders.svg" />
+              <span>Classes</span>
+            </button>
+            <button type="button">
+              <img src="/assets/icon-levels.svg" />
+              <span>Students</span>
+            </button>
+            <button type="button">
+              <img src="/assets/icon-accounts.svg" />
+              <span>Logout</span>
+            </button>
+          </nav>
+        </div>
+      </nav>
+
+      <div class="container">
+      </div>
+  
+      <script type="text/javascript">
+        const toggleSidebar = () => document.body.classList.toggle("open");
+      </script>
+  
+    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js "
