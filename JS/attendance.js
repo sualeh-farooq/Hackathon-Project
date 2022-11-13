@@ -39,6 +39,7 @@ let status = document.getElementById('statusAttend')
 if(markAttend) {
 markAttend.addEventListener('click',async()=>{
 let rollNo = document.getElementById('atd-roll')
+let status = document.getElementById('statusAttend').value 
 console.log(rollNo.value)
 // console.log(studentCor.value);
 // let stdClas = document.getElementById("std-cls");
@@ -47,9 +48,27 @@ const q = query(
   where("rollno", "==", rollNo.value)
 );
 const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
+querySnapshot.forEach(async(doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
   console.log(doc.data().name);
+  swal(
+    doc.data().name + "'s Attendance Marked",
+    "Attendence " + status,
+    "success"
+  );
+
+  if(doc.data().rollno !== rollNo.value) {
+    swal("Invalid Roll No", "Student Not Found", "error");
+  }
+  const docRef = await addDoc(collection(db, "attendance"), {
+  name : doc.data().name,
+  attendance: status,
+  class : doc.data().course,
+  section : doc.data().section,
+  timeStamp : new Date()
+  });
+
+
 });  
 })}
