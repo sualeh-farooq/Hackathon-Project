@@ -57,7 +57,10 @@
 .smitLogo {
     width: 170px;
     /* margin-bottom: -50px !important; */
+}
 
+#submitStudent {
+    width: 30% !important;
 }
 
 .h2{

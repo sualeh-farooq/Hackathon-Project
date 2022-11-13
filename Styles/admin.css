@@ -476,3 +476,6 @@ td {
 .sidebarCheck {
   height: 150% !important;
 }
+#submitStd {
+    width: 30% !important;
+}
