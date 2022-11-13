@@ -11,20 +11,19 @@ import {
   setDoc,
   getFirestore,
   getDoc,
-  collection, 
-  query, 
-  where, 
-  getDocs
+  collection,
+  query,
+  where,
+  addDoc,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 import {
-    getStorage,
-    ref,
-    uploadBytesResumable,
-    getDownloadURL,
-  } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
-
-
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBer4IUmkGuMMkLWsRD4sxPuWV5RQUi0cI",
@@ -39,28 +38,25 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
 
-
-
 // Gettig Available Sections of Selected Course
-let studentCor = document.getElementById('std-crs')
-studentCor.addEventListener('change',async ()=>{
-    console.log(studentCor.value)
-    let stdClas = document.getElementById('std-cls')
-    const q = query(collection(db, "classes"), where("course", "==", studentCor.value ));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-      console.log(doc.data().section)
-      stdClas.innerHTML += 
-      `
+let studentCor = document.getElementById("std-crs");
+studentCor.addEventListener("change", async () => {
+  console.log(studentCor.value);
+  let stdClas = document.getElementById("std-cls");
+  const q = query(
+    collection(db, "classes"),
+    where("course", "==", studentCor.value)
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+    console.log(doc.data().section);
+    stdClas.innerHTML += `
       <option>${doc.data().section}</option>
-      `
-    });
-})
-
-
-
+      `;
+  });
+});
 
 // Redirect to the Home Page
 let gohome = document.getElementById("gotoHome");
@@ -70,57 +66,52 @@ if (gohome) {
   });
 }
 
+//
 
-// 
+let stdName = document.getElementById("std-name");
+let stdFather = document.getElementById("std-father");
+let stdRoll = document.getElementById("std-roll");
+let stdNum = document.getElementById("std-num");
+let stdCnic = document.getElementById("std-cnic");
+let stdCourse = document.getElementById("std-crs");
+let stdPicture = document.getElementById("std-img");
+let SubmitStd = document.getElementById("submitStd");
 
+SubmitStd.addEventListener("click", getData);
 
-const imageUpload = (file)=> {
-    return new Promise((resolve,reject)=>{
-        const storage = getStorage();
-        const storageRef = ref(storage, `images/profile.png`);
-        const uploadTask = uploadBytesResumable(storageRef, file);
-        uploadTask.on('state_changed', 
-        (snapshot) => {
-            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
-            switch (snapshot.state) {
-              case 'paused':
-                console.log('Upload is paused');
-                break;
-              case 'running':
-                console.log('Upload is running');
-                break;
-            }
-          }, 
-          (error) => {
-            reject(error)
-          }, 
-          () => {
-        
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log('File available at', downloadURL);
-              resolve(downloadURL)
-            });
-          }
-        );
-        
-    })
-}
-
-
-let stdName = document.getElementById('std-name')
-let stdFather = document.getElementById('std-father')
-let stdRoll = document.getElementById('std-roll')
-let stdNum = document.getElementById('std-num')
-let stdCnic = document.getElementById('std-cnic')
-let stdCourse = document.getElementById('std-crs')
-let stdPicture = document.getElementById('std-img')
-let SubmitStd = document.getElementById('submitStd')
-
-
-
-SubmitStd.addEventListener('click', getData)
+const imageUpload = (file) => {
+  return new Promise((resolve, reject) => {
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${stdName.value}.png`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused");
+            break;
+          case "running":
+            console.log("Upload is running");
+            break;
+        }
+      },
+      (error) => {
+        reject(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log("File available at", downloadURL);
+          resolve(downloadURL);
+        });
+      }
+    );
+  });
+};
 
 async function getData() {
   if (stdName.value.trim() !== "") {
@@ -130,14 +121,18 @@ async function getData() {
           if (stdCnic.value.trim() !== "") {
             if (stdCourse.value !== "") {
               if (stdPicture) {
-               
                 if (studentCor.value !== "") {
-                  alert("Done");
-                  setTimeout(async() => {
-                      const img = await imageUpload(stdPicture.files[0])
-                    console.log(img)
-                  }, 3000);
-// console.log(stdPicture.files[0])
+                    swal(
+                        "Student Added Succefully",
+                        "Student has been Added",
+                        "success"
+                      );
+                //   alert("Done");
+                  const img = await imageUpload(stdPicture.files[0]);
+                  console.log(img);
+                  addStdinDB(img);
+                  // console.log(stdPicture.files[0])
+                 
                 } else {
                   swal(
                     "Missing Class Section",
@@ -168,35 +163,30 @@ async function getData() {
   }
 }
 
-
-
-
-
-
 /// Storing Student Data
 
-async function addStdinDB() {
-let studentCor = document.getElementById('std-crs')
-    let stdName = document.getElementById('std-name')
-    let stdFather = document.getElementById('std-father')
-    let stdRoll = document.getElementById('std-roll')
-    let stdNum = document.getElementById('std-num')
-    let stdCnic = document.getElementById('std-cnic')
-    let stdCourse = document.getElementById('std-crs')
-    let stdPicture = document.getElementById('std-img')
-    const docRef = await addDoc(collection(db, "Students"), {
-        name : stdName.value,
-        father : stdFather.value,
-        rollno : stdRoll.vaue,
-        number : stdNum.value,
-        cnic : stdCnic.value,
-        course : stdCourse.value,
-        classsection : studentCor.value
-    });
-    console.log("Document written with ID: ", docRef.id);
-  }
-  
+async function addStdinDB(img) {
+  console.log(`The url of image is ready`, img);
+  let studentCor = document.getElementById("std-crs");
+  let stdName = document.getElementById("std-name");
+  let stdFather = document.getElementById("std-father");
+  let stdRoll = document.getElementById("std-roll");
+  let stdNum = document.getElementById("std-num");
+  let stdCnic = document.getElementById("std-cnic");
+  let stdSec = document.getElementById("std-cls");
+  let stdPicture = img;
+  const docRef = await addDoc(collection(db, "students"), {
+    name: stdName.value,
+    father: stdFather.value,
+    rollno: stdRoll.value,
+    number: stdNum.value,
+    cnic: stdCnic.value,
+    course: stdCourse.value,
+    classsection: studentCor.value,
+    imageUrl: stdPicture,
+    section : stdSec.value
+  });
+  console.log("Document written with ID: ", docRef.id);
+}
 
-  //Storing Image
-
-
+//Storing Image
