@@ -36,13 +36,14 @@ let rollNo = document.getElementById('atd-roll')
 let status = document.getElementById('statusAttend')
 
 
+
+// Marking Student Attendance
+
 if(markAttend) {
 markAttend.addEventListener('click',async()=>{
 let rollNo = document.getElementById('atd-roll')
 let status = document.getElementById('statusAttend').value 
 console.log(rollNo.value)
-// console.log(studentCor.value);
-// let stdClas = document.getElementById("std-cls");
 const q = query(
   collection(db, "students"),
   where("rollno", "==", rollNo.value)
