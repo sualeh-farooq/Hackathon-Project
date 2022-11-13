@@ -126,6 +126,13 @@
   justify-content: center;
 }
 
+.cardAtend {
+  margin: 10px !important;
+}
+
+.card-body {
+  padding: 10px !important;
+}
 .adminLim {
   display: flex;
   justify-content: space-around;
@@ -133,6 +140,18 @@
   /* border: 2px solid black; */
   padding: 0;
   flex-wrap: wrap;
+}
+.input2 {
+  width: 100% !important;
+}
+
+.adminLima{
+  display: flex !important;
+  justify-content: center !important;
+  /* border: 2px solid black; */
+  width: max-content;
+  margin: 0 auto !important;
+  text-align: center !important;
 }
 .cardGrid {
   display: flex;
@@ -422,6 +441,15 @@ ol li {
   background-color: rgba(255, 255, 255, 0.5);
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+} 
+.cardGrid2 {
+  display: flex !important;
+  flex-direction: row !important;
+  z-index: -1;
+}
+.adminClasses {
+  margin-top: 10% !important;
+  /* border: 2px solid black; */
 }
 
 .admin>h5 {

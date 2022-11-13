@@ -12,7 +12,7 @@ import {
   getFirestore,
   getDoc,
   collection,
-   addDoc
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -37,16 +37,16 @@ let batch = document.getElementById("cls-bn");
 
 // Checking And Storing Fields
 function getData() {
-    if (classTime.value.trim() !== "") {
+  if (classTime.value.trim() !== "") {
     if (classScedhule.value !== "") {
       if (classTeacher.value !== "") {
         if (classSec.value.trim() !== "") {
           if (course.value.trim() !== "") {
             if (batch.value.trim() !== "") {
-            //   alert("All Done");
-    swal("Class Added Succefully", "Class has been Added", "success");
+              //   alert("All Done");
+              swal("Class Added Succefully", "Class has been Added", "success");
 
-              addClassinDB()
+              addClassinDB();
             } else {
               swal("Invalid Batch", "Enter Batch Number", "error");
             }
@@ -66,7 +66,7 @@ function getData() {
     swal("Invalid Class Time", "Enter Class Time", "error");
   }
 
-console.log(classScedhule.value)
+  console.log(classScedhule.value);
 }
 
 // Go back to home
@@ -77,26 +77,24 @@ if (gohome) {
   });
 }
 
-
 // Submit Class button
-let submitClassBtn = document.getElementById('submitClass')
-submitClassBtn.addEventListener('click',getData)
-
+let submitClassBtn = document.getElementById("submitClass");
+submitClassBtn.addEventListener("click", getData);
 
 async function addClassinDB() {
-    let classTime = document.getElementById("cls-time");
-let classScedhule = document.getElementById("cls-sc");
-let classTeacher = document.getElementById("cls-tea");
-let classSec = document.getElementById("cls-sec");
-let course = document.getElementById("cls-crs");
-let batch = document.getElementById("cls-bn");
-    const docRef = await addDoc(collection(db, "classes"), {
-        time : classTime.value,
-        schedule : classScedhule.value,
-        teacher : classTeacher.value,
-        section : classSec.value,
-        course : course.value,
-        batch : batch.value
-      });
-      console.log("Document written with ID: ", docRef.id);
+  let classTime = document.getElementById("cls-time");
+  let classScedhule = document.getElementById("cls-sc");
+  let classTeacher = document.getElementById("cls-tea");
+  let classSec = document.getElementById("cls-sec");
+  let course = document.getElementById("cls-crs");
+  let batch = document.getElementById("cls-bn");
+  const docRef = await addDoc(collection(db, "classes"), {
+    time: classTime.value,
+    schedule: classScedhule.value,
+    teacher: classTeacher.value,
+    section: classSec.value,
+    course: course.value,
+    batch: batch.value,
+  });
+  console.log("Document written with ID: ", docRef.id);
 }

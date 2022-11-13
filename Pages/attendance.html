@@ -59,54 +59,34 @@
 
       <div class="container">
         <div class="limiter adminLim">
-            <div>
+            <!-- <div>
                 <img class="adminLogo" src="/assets/smit.png" alt="">
-            </div>
+            </div> -->
             <div>
-                <h2 class="adminHead"  >Saylani Mass IT Training - Attendance Portal</h2>
+                <h2 class="adminHead"  >Attendance Portal</h2>
             </div>
         </div>
         <!-- <hr> -->
 
         <div class="cardGrid">
-          <button  class="cardBtn" id="addClass" >  
-            <div class="card" style="width: 18rem;">
-              <img class="fa fa-user" src="/assets/icon-speaker.svg" />
-                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-              <img class=" fa fa-graduation-cap okay" src="/assets/icon-blockchain.svg" />
-
-                <div class="card-body"  >
-                  <h5 class="card-title"  >Add Class</h5>
+            <div class="card cardAtend" style="width: 18rem;">
+                <!-- <img class="/card-img-top" src="..." alt="Card image cap"> -->
+                <div class="card-body">
+                  <h5 class="card-title">Student Attendance</h5>
                   <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                  <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
+                  <br>
+                  <input placeholder="Enter Roll No" id="atd-roll" class="input input2" type="text">
+                    <br><br>
+                  <select id="statusAttend">
+                    <option value="Present">Present</option>
+                    <option value="Present">Absent</option>
+                    <option value="Present">Late</option>
+                    <option value="Present">Leave</option>
+
+                  </select> <br> <br>
+                  <a id="markAttend" class="btn btn-primary">Mark Attendance</a>
                 </div>
               </div>
-            </button>
-            <button class="cardBtn" id="addStd" >  
-                <div class="card" style="width: 18rem;">
-                    
-                    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                    <img class="fa fa-user okay" src="/assets/icon-speaker.svg" />
-                    <div class="card-body">
-                        
-                      <h5 class="card-title">Add Student</h5>
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                      <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
-                    </div>
-                  </div>
-                </button>
-                <button class="cardBtn" id="attend">  
-                    <div class="card" style="width: 18rem;">
-                <img class="far fa-id-card okay" src="/assets/icon-levels.svg" />
-
-                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                        <div class="card-body">
-                          <h5 class=    "card-title">Attendance</h5>
-                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                          <!-- <a href="#" class="btn btn-primary">Click Here</a> -->
-                        </div>
-                      </div>
-                    </button>
         </div>
       </div>
   
@@ -117,7 +97,8 @@
     
   <!-- <script src="admin.js" type="module"></script>
   sc -->
-  <script src="/JS/admin.js" type="module"></script>
+  <!-- <script src="/JS/admin.js" type="module"></script> -->
+  <script src="/JS/attendance.js" type="module"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js "
