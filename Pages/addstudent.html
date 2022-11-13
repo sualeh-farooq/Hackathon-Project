@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <nav class="sidebar">
+    <nav class="sidebar sidebarCheck">
         <div class="sidebar-inner">
           <header class="sidebar-header">
             <button
@@ -72,45 +72,43 @@
       <form id="form">
           <div class="row-check">
               <div class="col">
-                  <label>Class Timings</label>
+                  <label>Name</label>
                   <br>
-                  <input class="input" id="cls-time" placeholder="Class Timings" type="text">
+                  <input class="input" id="cls-time" placeholder="Name" type="text">
               </div>
               <div class="col">
-                <label>Schedule</label>
+                <label>Father Name</label>
                 <br>
-                <select id="cls-sc" class="input" required>
-                    <option disabled selected ></option>
-                    <option>Monday - Wednesday - Friday</option>
-                    <option>Tuesday - Thursday - Saturday</option>
+                <input class="input" id="cls-time" placeholder="Class Timings" type="text">
 
-                </select>
             </div>
           </div>
           <div class="row-check">
               <div class="col">
-                  <label>Teacher Name</label>
+                  <label>Roll No</label>
                   <br>
-                  <select id="cls-tea" class="input" required>
-                    <option disabled selected ></option>
-                    <option>Sir Haider</option>
-                    <option>Sir Ghous</option>
-                    <option>Sir Inzamam</option>
-                    <option>Sir Kashif</option>
-                    <option>Sir Rizwan</option>
-
-                  </select>
+                  <input class="input" id="cls-time" placeholder="Father" type="text">
               </div>
               <div class="col">
-                  <label>Section</label>
+                  <label>Contact Number</label>
                   <br>
-                  <input placeholder="Section" id="cls-sec" class="input" type="text">
+                  <input placeholder="Number" id="cls-sec" class="input" type="text">
               </div>
           </div>
           <div class="row-check">
               
               <div class="col">
-                  <label>Course</label>
+                  <label>CNIC</label>
+                  <br>
+                  <input placeholder="CNIC" id="cls-sec" class="input" type="text">
+
+          </div>
+        
+          
+          
+          <div class="row-check">
+              <div class="col">
+                  <label>Course Name</label>
                   <br>
                   <select id="cls-crs" class="input" required>
                     <option disabled selected ></option>
@@ -121,21 +119,33 @@
                     <option>Mobile Repairing</option>
 
                   </select>
-          </div>
-        
-          
-          
-          <div class="row-check">
-              <div class="col">
-                  <label>Batch Number</label>
-                  <br>
-                  <input class="input file" id="cls-bn" type="text" placeholder="Batch Number" >
 
               </div>
+              <div class="row-check">
+                <div class="col">
+                    <label>Picture</label>
+                    <br>
+                    <input class="input file" id="cls-bn" type="file" placeholder="Batch Number" >
+                </div>
+                <div class="row-check">
+                    <div class="col">
+                        <label>Class</label>
+                        <br>
+                        <select id="cls-crs" class="input" required>
+                            <option disabled selected ></option>
+                            <option>Graphic Designing</option>
+                            <option>Web & Mobile</option>
+                            <option>CCNA</option>
+                            <option>Certified Computer Operator</option>
+                            <option>Mobile Repairing</option>
+        
+                          </select>
+                    </div>
+              
           </div>
           <div class="row-check">
             <div class="col">
-          <submit  type="submit" id="submitClass" class="btn btn-primary">Add Class</submit>
+          <submit  type="submit" id="submitClass" class="btn btn-primary">Add Student</submit>
             </div></div>
       </form>
    
@@ -148,7 +158,8 @@
   
   <!-- <script src="addClass.js" type="module"></script>
   a -->
-  <script src="/JS/addClass.js" type="module"></script>
+  <!-- <script src="/JS/addClass.js" type="module"></script> -->
+  <script src="/JS/addStudent.js" type="module"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js "
